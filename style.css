@@ -1,0 +1,307 @@
+/* =========================================
+   1. GLOBAL & BASICS
+   ========================================= */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding-top: 80px; /* Platz für Nav */
+  padding-bottom: 80px; /* Platz für Footer */
+  background-image: -webkit-linear-gradient(white, #fed7fa);
+  min-height: 100vh;
+}
+
+/* =========================================
+   2. NAVIGATION (Header & Treppen-Effekt)
+   ========================================= */
+nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Fixiert oben */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a {
+  display: inline-block;
+  background-color: #0d150e;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 22px;
+  transition: 0.25s ease;
+}
+
+/* Treppen-Versatz Desktop */
+nav li:nth-child(1) { margin-left: 20px; }
+nav li:nth-child(2) { margin-left: 60px; }
+nav li:nth-child(3) { margin-left: 120px; }
+nav li:nth-child(4) { margin-left: 160px; }
+
+/* Hover & Active States */
+nav a:hover {
+  transform: translateX(10px) translateY(-3px);
+  box-shadow: 0 0 20px rgba(209, 18, 187, 0.55);
+  background-color: #041002;
+  color: rgb(217, 235, 81);
+  border: 2px solid rgb(217, 235, 81);
+}
+
+nav a.active {
+  background-color: #adbcb6;
+  color: #041002;
+}
+
+/* =========================================
+   3. SEITENSPEZIFISCHE HINTERGRÜNDE
+   ========================================= */
+body.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Oben beginnen, nicht mittig quetschen */
+  padding-top: 180px; /* Platz für die Treppen-Nav lassen */
+  background-image: url("./images/image.png");
+  background-size: cover;
+  background-position: center;
+}
+
+body.werichbin {
+  background-image: url("images/Schriftzug.png");
+  background-size: 300px 180px;
+  background-repeat: repeat;
+}
+
+body.projekte { background-image: url("images/projekte.png"); }
+body.kontakt { background-image: url("images/kontakt.png"); }
+
+/* Der Bereich mit Text und Drache */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 90%;
+}
+.werichbin img{
+  background-color: rgba(96, 226, 243, 0.5); 
+  padding: 15px;
+  border-radius: 12px;
+  margin-left: 300px;
+}
+
+fieldset {
+  display: flex; /* Zurück auf Block, damit Text nicht gequetscht wird */
+  flex-direction: row;
+  align-items: last baseline;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(41, 36, 29, 0.5); /* Dunkler, transparenter Hintergrund */
+  padding: 10px;
+  border-radius: 12px;
+  opacity: 1; /* Wieder voll sichtbar machen */
+  text-align:center;
+}
+
+
+fieldset a {
+  color: #f3e921; /* Gelb wie in deinem Footer */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   4. GRID LAYOUTS (Über mich / KOKOM)
+   ========================================= */
+
+ .card:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+ }
+
+/* =========================================
+   4. DAS MASTER-GRID (Funktioniert für alle Seiten)
+   ========================================= */
+
+/* Der Hauptcontainer für alle Inhalts-Seiten */
+.about-section, .kokom-details, .contact-faq-section, .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Die Karten-Struktur (Egal ob .card oder .card-all) */
+.card, .card-all {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Links Titel, Rechts Text */
+  gap: 30px;
+  align-items: center;
+  
+  background-color: rgba(255, 255, 255, 0.4); /* Heller & lesbarer */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Speziell für die KOKOM-Seite: Bild-Integration */
+.detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Das Foto auf der KOKOM Seite */
+.photo-placeholder {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  background: #cbd4d1;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #999;
+}
+
+/* Überschriften in den Karten */
+.card h3, .card-all h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  text-align: left;
+  grid-column: 1 / 2; /* Immer in der ersten Spalte */
+  grid-row: 1 / 2; /* Immer in der ersten Zeile */
+}
+
+/* Texte in den Karten */
+.card p, .card-all p {
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE: Für Handys */
+@media (max-width: 850px) {
+  .card, .card-all {
+    grid-template-columns: 1fr; /* Alles untereinander */
+    text-align: center;
+    padding: 20px;
+  }
+  .card h3, .card-all h3 { text-align: center; }
+  .card p, .card-all p { text-align: center; }
+}
+
+/* =========================================
+   5. BILDER & GALERIE
+   ========================================= */
+.photo-placeholder {
+  grid-row: span 2;
+  background-color: #ddd;
+  border: 2px dashed #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  min-height: 300px;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.img-placeholder {
+  aspect-ratio: 1 / 1;
+  background-color: #cbd4d1;
+  border: 2px dashed #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* =========================================
+   6. FOOTER & SONSTIGES
+   ========================================= */
+footer {
+  background-color: #343138;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+footer p { color: white; 
+    font-size: 1rem;padding: 0 20px; display: inline-block; }
+
+#fotter_1 {
+  color: #bfd916;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+#fotter_2 {
+  color: #16cfd9;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.values-list { list-style: none; padding: 0; }
+.values-list li::before { content: "✓ "; font-weight: bold; }
+
+.contact-button {
+  background-color: #bcdd17;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#kokom-background-color {
+  background-color: rgba(81, 48, 211, 0.5); /* Heller Hintergrund für KOKOM */
+}
+.contact-button:hover {
+  background-color: #16cfd9;
+  color: #041002;
+}
+.kontakt h1{
+    margin-left: 40px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}

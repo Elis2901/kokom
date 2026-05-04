@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokom - Anmeldung</title>
+    <link rel="stylesheet" href="goforit.css">
+</head>
+
+<body>
+<div class="anmelde-container">
+    <img class="anmelde-bild" src="images/Koko.png" alt="Kokom Logo">
+
+    <form class="anmeldung" action="https://formspree.io/f/xkoyggeg" method="POST">
+        <h2>Anmeldung</h2>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <fieldset>
+            <p>Wann bist Du dabei?</p>
+            <label for="datum">Datum der Veranstaltung</label>
+            <input type="date" id="datum" name="datum" required>
+        </fieldset>
+
+        <label for="number-of-participants">Anzahl der Teilnehmer</label>
+        <input type="number" id="number-of-participants" name="number-of-participants">
+
+        <label for="nachricht">Nachricht (optional*)</label>
+        <textarea id="nachricht" name="nachricht"></textarea>
+
+        <button class="submit" type="submit">Jetzt anmelden</button>
+        
+      
+    </form>
+</div>

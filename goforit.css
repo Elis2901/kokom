@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    padding: 20px;
+}
+
+/* --- GRID LAYOUT --- */
+.anmelde-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 60px auto;
+    align-items: start;
+}
+
+/* --- BILD --- */
+.anmelde-bild {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    border: 2px solid #4c4848;
+    object-fit: cover;
+    justify-self: center;
+}
+
+/* --- FORMULAR --- */
+.anmeldung {
+    background-color: #f2f2f2;
+    padding: 35px;
+    border-radius: 12px;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.anmeldung h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Inputs */
+.anmeldung input,
+.anmeldung textarea,
+.anmeldung select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+}
+
+/* Mehr Luft auf großen Screens */
+@media (min-width: 900px) {
+    .anmeldung input,
+    .anmeldung textarea {
+        padding: 18px;
+        font-size: 18px;
+    }
+}
+
+/* Textarea */
+#nachricht {
+    height: 120px;
+    resize: none;
+}
+
+/* Fieldset */
+fieldset {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+fieldset p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.anmeldung button {
+    width: 100%;
+    padding: 16px;
+    background: #ffbe5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.anmeldung button:hover {
+    background: #6af77f;
+    color: black;
+}
+
+/* --- RESPONSIVE: Bild unter Formular auf kleinen Screens --- */
+@media (max-width: 750px) {
+    .anmelde-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .anmelde-bild {
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+}
+li{
+    list-style-type: circle;
+    margin-left: 20px;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+h2{
+    text-align: center;
+    margin-top: 25px;
+}
+p{
+    text-align: justify;
+    margin: 10px 0;
+}
