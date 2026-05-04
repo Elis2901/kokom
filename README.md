@@ -1,0 +1,1 @@
+Seminar für Persönlichkeitsentwicklung. Raufen hilft, Dampf abzulassen. Kraft darf sich ausdrücken. Danach wird gekuschelt. Das Bedürfnis nach Nähe wird gestillt. Ein Tag zum Loslassen und Wiederfinden. 
